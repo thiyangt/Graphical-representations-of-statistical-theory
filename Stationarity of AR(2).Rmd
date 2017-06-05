@@ -3,14 +3,14 @@ title: "Stationarity of AR(2) process"
 author: "Thiyanga Talagala"
 date: "June 5, 2017"
 output: 
-github_document:
-  toc: yes
-  toc_depth: 3
-html_document: 
-  toc: yes
-  toc_depth: 3
-linkcolor: magenta
-urlcolor: magenta
+  github_document:
+    toc: yes
+    toc_depth: 3
+  html_document: 
+    toc: yes
+    toc_depth: 3
+  linkcolor: magenta
+  urlcolor: magenta
 ---
 
 ```{r echo=FALSE, message=FALSE}
