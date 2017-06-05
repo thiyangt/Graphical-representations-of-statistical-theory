@@ -1,0 +1,42 @@
+---
+title: "Stationarity of AR(2) process"
+author: "Thiyanga Talagala"
+date: "June 5, 2017"
+output: 
+github_document:
+  toc: yes
+  toc_depth: 3
+html_document: 
+  toc: yes
+  toc_depth: 3
+linkcolor: magenta
+urlcolor: magenta
+---
+
+```{r echo=FALSE, message=FALSE}
+knitr::opts_chunk$set(fig.width = 8, fig.height = 6, echo=T, warning=FALSE,
+                      message=FALSE, prompt = F, tidy=T, tidy.opts = list(width.cutoff=50), include=T, cache=T, autodep = T,
+                      comment="")
+
+```
+
+#Stationarity of AR(2) process
+
+This code was extracted from https://stats.stackexchange.com/questions/118019/a-proof-for-the-stationarity-of-an-ar2.
+
+
+```{r}
+
+phi1 <- seq(from = -2.5, to = 2.5, length = 51) 
+plot(phi1,1+phi1,lty="dashed",type="l",xlab="",ylab="",cex.axis=.8,ylim=c(-1.5,1.5))
+abline(a = -1, b = 0, lty="dashed")
+abline(a = 1, b = -1, lty="dashed")
+title(ylab=expression(phi[2]),xlab=expression(phi[1]),cex.lab=.8)
+polygon(x = phi1[6:46], y = 1-abs(phi1[6:46]), col="gray")
+lines(phi1,-phi1^2/4)
+text(0,-.5,expression(phi[2]<phi[1]^2/4),cex=.7)
+text(1.2,.5,expression(phi[2]>1-phi[1]),cex=.7)
+text(-1.75,.5,expression(phi[2]>1+phi[1]),cex=.7)
+
+```
+
